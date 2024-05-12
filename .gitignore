@@ -1,0 +1,4 @@
+server/storage/videos/*
+server/storage/demos/*
+
+*.exe

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta property="og:title" content="{{ .title }}" />
+    <meta property="og:type" content="video" />
+    <meta property="og:video" content="{{ .url }}/storage/videos/{{ .id }}.mp4" />
+    <meta name="theme-color" content="#ff0000">
+
+    {{ if ne .status "1" }}
+    <meta property="og:description" content="This demo has not been rendered yet" />
+    {{ end }}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+        integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+        crossorigin="anonymous"></script>
+
+    <title>{{ .title }}</title>
+</head>
+
+<body>
+    <div class="title">
+        {{ .title }}
+    </div>
+    {{ if ne .status "1" }}
+    This demo has not been rendered yet, come back later!
+    {{else}}
+    <video width="500" height="281" controls>
+        <source src="/storage/videos/{{ .id }}.mp4" type="video/mp4" />
+    </video>
+    {{ end }}
+</body>
+
+</html>
+
+{{ define "unfinished" }}
+Demo {{ .id }} has not been rendered!
+{{ end }}

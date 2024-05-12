@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+        integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+        crossorigin="anonymous"></script>
+    <title>Autorender</title>
+</head>
+
+<body>
+    <form hx-encoding='multipart/form-data' hx-post='/api/upload/demo'
+        _='on htmx:xhr:progress(loaded, total) set #progress.value to (loaded/total)*100'>
+        <input type='file' name='file'>
+        <input type="text" name="title">
+        <button>
+            Upload Demo
+        </button>
+        <progress id='progress' value='0' max='100'></progress>
+    </form>
+</body>
+
+</html>

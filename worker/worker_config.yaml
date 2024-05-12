@@ -1,0 +1,4 @@
+id: "sample"
+gamedir: "D:/Steam/steamapps/common/Portal 2"
+requestinterval: 1
+server: "http://localhost:53000"
